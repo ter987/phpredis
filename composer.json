@@ -1,0 +1,11 @@
+{
+    "name": "gaodun/phpredis",
+    "description": "php redis extension",
+    "authors": [
+        {
+            "name": "eric.wang",
+            "email": "eric.wang@gaodun.com"
+        }
+    ],
+    "require": {}
+}
