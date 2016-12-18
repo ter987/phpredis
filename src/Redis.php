@@ -3,9 +3,9 @@ namespace gaodun\phpredis;
 
 class Redis
 {
-    protected $host;
-    protected $port;
-    protected $password;
+    protected $host = REDIS_HOST;
+    protected $port = REDIS_PORT;
+    protected $password = REDIS_PASSWORD;
     protected $redis;
     protected $redisCommand = [];
     static $instance;
@@ -15,6 +15,7 @@ class Redis
         if (!extension_loaded('redis')) {
             throw new \Exception('没有php_redis扩展');
         }
+        echo $this->port;exit;
         $this->connect();
     }
 
