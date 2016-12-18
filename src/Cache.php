@@ -17,7 +17,7 @@ class Cache
         $value = serialize($value);
         if (!empty($expire)) {
             $this->redis->set($key, $value);
-            $this->redis-expire($key, $expire);
+            $this->redis->expire($key, $expire);
         } else {
             $this->redis->set($key, $value);
         }
