@@ -6,6 +6,7 @@ class Redis
     protected $host = REDIS_HOST;
     protected $port = REDIS_PORT;
     protected $password = REDIS_PASSWORD;
+    public $prefix = REDIS_PREFIX;
     protected $redis;
     protected $redisCommands = [
         'BLPOP', // key [key ...] timeout Remove and get the first element in a list, or block until one is available

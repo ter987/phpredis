@@ -14,6 +14,7 @@ class Cache
 
     public function set($key, $value, $expire = 0)
     {
+        $key = $this->redis->prefix.$key;
         $value = serialize($value);
         if (!empty($expire)) {
             $this->redis->set($key, $value);
@@ -25,6 +26,7 @@ class Cache
 
     public function get($key)
     {
+        $key = $this->redis->prefix.$key;
         $value = $this->redis->get($key);
         if (!empty($value)) {
             return unserialize($value);
@@ -39,6 +41,7 @@ class Cache
      */
     public function del($key)
     {
+        $key = $this->redis->prefix.$key;
         $this->redis->del($key);
     }
 }
