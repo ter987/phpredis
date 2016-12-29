@@ -192,7 +192,7 @@ class Redis
     {
         $method = strtoupper($method);
         if (!in_array($method, $this->redisCommands)) {
-            throw new \Exception('redis 指令有误');
+            die('redis 指令有误');
         }
         $count = count($param);
         switch ($count) {
@@ -207,6 +207,12 @@ class Redis
                 break;
             case 3 :
                 return $this->redis->$method($param[0], $param[1], $param[2]);
+                break;
+            case 4 :
+                return $this->redis->$method($param[0], $param[1], $param[2], $param[3]);
+                break;
+            case 5 :
+                return $this->redis->$method($param[0], $param[1], $param[2], $param[3], $param[4]);
                 break;
         }
     }
